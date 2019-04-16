@@ -5,11 +5,13 @@ body{
 }
 
 #container{
+    background-image: ("img/Background.jpg");
     margin : 20px auto;
     height: 300px;
     width : 700px;
     border-radius: 5px;
     position: relative;
+    
 
 }
 #start{
