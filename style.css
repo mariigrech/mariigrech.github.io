@@ -5,12 +5,12 @@ body{
 
 #container{
     margin : 20px auto;
-    background-color: white;
     height: 300px;
     width : 700px;
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px;
     position: relative;
+    background: ("img/Background.jpg");
 }
 #start{
     font-size: 1.5em;
@@ -146,21 +146,3 @@ body{
     font-weight: bold;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
