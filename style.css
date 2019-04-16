@@ -6,7 +6,7 @@ body{
 
 #container{
     background-image: ("img/Background.jpg");
-    margin : 20px auto;
+    margin : 10px auto;
     height: 300px;
     width : 700px;
     border-radius: 5px;
