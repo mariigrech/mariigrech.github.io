@@ -1,17 +1,16 @@
 body{
     font-size: 20px;
     font-family: monospace;
-    background-image: ("img/Background.jpg");
+    background-image: url("img/Background.jpg");
 }
 
 #container{
-    background-image: ("img/Background.jpg");
     margin : 10px auto;
     height: 300px;
     width : 700px;
     border-radius: 5px;
     position: relative;
-    
+
 
 }
 #start{
