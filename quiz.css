@@ -1,3 +1,68 @@
+html.cover,body.cover{
+    height: 100%;
+}
+
+.background {
+  /* The image used */
+ background-image: url("img/ccbill.jpg");
+
+ /* Full height */
+ height: 100%;
+
+ /* Center and scale the image nicely */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.background-quiz {
+  /* The image used */
+ background-image: url("img/Background.jpg");
+
+
+ /* Center and scale the image nicely */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+/* push background div to bottom */
+div.bottom {
+  position: fixed;
+  bottom: 0;
+  width:100%
+}
+
+/* put start now button a bit up */
+div.bottom > a > button {
+  margin-bottom: 40px;
+}
+
+.btn-block+.btn-block {
+    margin-top: 2rem;
+}
+
+#start{
+    font-size: 1.5em;
+    font-weight: bolder;
+    word-break: break-all;
+    width:200px;
+    height:50px;
+    border-radius: 16px;
+    border : 2px solid black;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 140%;
+    left: 35%;
+    color : black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#start:hover{
+    border: 3px solid #242424;
+    color : #2424;
+}
+
 #qid {
   padding: 10px 15px;
   -moz-border-radius: 50px;
@@ -17,13 +82,13 @@ label.btn {
 
 label.btn:hover {
     text-shadow: 0 3px 2px rgba(0,0,0,0.4);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1)
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05)
 }
 label.btn-block {
     text-align: left;
-    position: relative
+    position: relative;
 }
 
 label .btn-label {
@@ -143,14 +208,19 @@ label .glyphicon {
         -ms-transform: translate(0px,0px)
     }
 }
+.text-center{
+      padding-top: 60px;
+      padding-left: 30px;
+      padding-right: 30px;
+}
 
 .modal-header {
     background-color: transparent;
-    color: inherit
+    color: inherit;
 }
 
 .modal-body {
-    min-height: 205px
+    min-height: 430px;
 }
 #loadbar {
     position: absolute;

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="quiz.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="quiz.js"></script>  <!-- TODO call min JS file instead : <script src="quiz.min.js"></script>-->
+
+</head>
+
+<body class="background-quiz">
+
+  <div id="nameInputDiv" class="text-center">
+    <div class="container card p-5 rounded-corners">
+      <form action="#" onsubmit="nameSubmitted();">
+        Name: <input id="nameinput" type="text" name="fullname"><br>
+        <input type="submit" value="Submit"/>
+      </form>
+    </div>
+  </div>
+
+  <div id="quizDiv" class="container-fluid background-quiz p-5">
+
+      <div class="container card p-5 rounded-corners">
+        <div class="card-title">
+          <h3 id="questionTitle">questionTitle</h3>
+        </div>
+        <div class="card-body row">
+
+          <div class="quiz col-6" id="quiz" data-toggle="buttons">
+            <input type="hidden" id="questionNumber" value="1"></input>
+            <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"/>1 One</label>
+            <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"/>2 Two</label>
+            <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3"/>3 Three</label>
+            <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4"/>4 Four</label>
+          </div>
+          <div class="col-6 d-flex align-items-center justify-content-center">
+            <img id="imgPlaceholder" src="" class="img-fluid"/>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

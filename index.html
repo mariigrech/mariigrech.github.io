@@ -1,56 +1,21 @@
-<html>
+<html class="cover">
 
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="quiz.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script src="quiz.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="quiz.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="quiz.js"></script>
 </head>
 
-<body>
-<div class="container-fluid bg-info">
-    <div class="modal-dialog">
-      <div class="modal-content">
-         <div class="modal-header">
-            <h3 id="questionTitle">questionTitle</h3>
-        </div>
-        <div class="modal-body">
-            <div class="col-xs-3 col-xs-offset-5">
-               <div id="loadbar" style="display: none;">
-                  <div class="blockG" id="rotateG_01"></div>
-                  <div class="blockG" id="rotateG_02"></div>
-                  <div class="blockG" id="rotateG_03"></div>
-                  <div class="blockG" id="rotateG_04"></div>
-                  <div class="blockG" id="rotateG_05"></div>
-                  <div class="blockG" id="rotateG_06"></div>
-                  <div class="blockG" id="rotateG_07"></div>
-                  <div class="blockG" id="rotateG_08"></div>
-              </div>
-          </div>
-
-          <div class="quiz" id="quiz" data-toggle="buttons">
-           <input type="hidden" id="questionNumber" value="1"></input>
-           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">1 One</label>
-           <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">2 Two</label>
-           <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">3 Three</label>
-           <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">4 Four</label>
-       </div>
-   </div>
-</div>
-</div>
-</div>
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="question1" onclick="showQuestion(1, 'Choose a colour:', 'Red', 'Blue', 'Green', 'Yellow')" data-toggle="pill" href="#" role="tab" aria-selected="true">Question 1</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="question2" onclick="showQuestion(2, 'Choose a random number:', '7', '5', '1', '6')" data-toggle="pill" href="#" role="tab" aria-selected="false">Question 2</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="question3"onclick="showQuestion(3, 'What type of animal do you identify yourself as?', 'Polar Bear', 'Cat', 'Owl', 'Dog')"  data-toggle="pill" href="#" role="tab" aria-selected="false">Question 3</a>
-  </li>
-</ul>
+<body class="cover">
+  <div class="background">
+    <div class="bottom text-center">
+      <a href="quiz.html">
+        <button class="btn btn-secondary">Start Quiz!</button>
+      </a>
+    </div>
+  </div>
 </body>
 
 </html>
