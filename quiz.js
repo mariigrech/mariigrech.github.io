@@ -16,7 +16,7 @@ $(function(){
     showQuestion(1, "Choose a colour:", "Red", "Blue", "Green", "Yellow");
 
     $("label.btn").on('click',function () {
-    	var chosenAnswer = $(this).find('input:radio').val();
+    	var chosenAnswer = $(this).data('answer');
     	// $('#loadbar').show();
     	$('#quiz').fadeOut();
     	setTimeout(function(){
@@ -42,7 +42,7 @@ $(function(){
               showQuestion(6, 'Why did you leave your last job?', 'I need a new adventure and try out new things', 'I felt like I wasn not important and appreciated enough and lack of recognition', 'No Opportunity for advancement', 'Wage was not enough for me to cope with my everyday life/needs');
               break;
             default:
-              alert(answers);
+              sendResults(answers);
               break;
           }
           $('#quiz').show();
@@ -54,9 +54,27 @@ $(function(){
       var src = 'img/question_' + $("#questionNumber").val() + '/' + $(this).data('question') + '.png';
       $("#imgPlaceholder").attr('src', src);
       $("#imgPlaceholder").error(function(){
-        $("#imgPlaceholder").attr('src', 'img/question_' + $("#questionNumber").val() + '/0.png');
+        if($("#imgPlaceholder").attr('src').indexOf('/0.png') == -1) // this is to prevent a for loop when image error occurs
+          $("#imgPlaceholder").attr('src', 'img/question_' + $("#questionNumber").val() + '/0.png');
       });
   });
+
+var obj = document.createElement("audio");
+
+    $(".sound-start").on('click',function () {
+
+      obj.pause();
+
+      if($(this).val()){
+        obj.src = "audio/" + $(this).val() + ".mp3";
+        obj.volume = 0.1;
+        obj.autoPlay = false;
+        obj.preLoad = true;
+        obj.controls = true;
+        obj.play();
+      }
+
+    });
 
 
 });
@@ -64,10 +82,10 @@ $(function(){
 function showQuestion(number, title, answer1, answer2, answer3, answer4) {
   $("#questionNumber").val(number);
   $("#questionTitle").html(title);
-  $("#quiz > label:nth-child(2)").html(answer1 + '<input type="radio" value="'+answer1+'" class="d-none">').data('question', '1');
-  $("#quiz > label:nth-child(3)").html(answer2 + '<input type="radio" value="'+answer2+'" class="d-none">').data('question', '2');
-  $("#quiz > label:nth-child(4)").html(answer3 + '<input type="radio" value="'+answer3+'" class="d-none">').data('question', '3');
-  $("#quiz > label:nth-child(5)").html(answer4 + '<input type="radio" value="'+answer4+'" class="d-none">').data('question', '4');
+  $("#quiz > label:nth-child(2)").html(answer1).data('answer', answer1).data('question', '1');
+  $("#quiz > label:nth-child(3)").html(answer2).data('answer', answer2).data('question', '2');
+  $("#quiz > label:nth-child(4)").html(answer3).data('answer', answer3).data('question', '3');
+  $("#quiz > label:nth-child(5)").html(answer4).data('answer', answer4).data('question', '4');
   $("#imgPlaceholder").attr('src', 'img/question_' + number + '/0.png');
 }
 
@@ -75,4 +93,19 @@ function nameSubmitted(){
   name = $("#nameinput").val();
   $("#nameInputDiv").hide();
   $("#quizDiv").show();
+}
+
+function sendResults(data){
+    Email.send({
+      Host : "smtp.mailtrap.io",
+      Username : "b508ab347d19d1",
+      Password : "87e5d764bacd44",
+      To : "dummy@email.com",
+      From : "dummy@email.com",
+      Subject : "Results",
+      Body : data
+  }).then(
+    message => alert("Results sent")
+  );
+
 }

@@ -7,18 +7,51 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <script src="quiz.js"></script>  <!-- TODO call min JS file instead : <script src="quiz.min.js"></script>-->
 
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 </head>
 
 <body class="background-quiz">
 
-  <div id="nameInputDiv" class="text-center">
+  <div id="nameInputDiv" class="container-fluid p-5">
     <div class="container card p-5 rounded-corners">
-        Name: <input id="nameinput" type="text" name="fullname"><br>
-        <input type="button" value="Submit" onclick="nameSubmitted();"/>
+      <div class="row">
+        <div class="col-6 form-group">
+            <label>Name:</label>
+            <input id="nameinput" type="text" name="fullname" class="form-control"><br>
+
+
+            <div class="mt-2 mb-5">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input id="sound1" type="radio" name="sound" value="" class="sound-start custom-control-input" checked>
+                <label class="custom-control-label" for="sound1">No Sound</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input id="sound2" type="radio" name="sound" value="bensound-happyrock" class="sound-start custom-control-input">
+                <label class="custom-control-label" for="sound2">Happy Rock</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input id="sound3" type="radio" name="sound" value="bensound-summer" class="sound-start custom-control-input">
+                <label class="custom-control-label" for="sound3">Summer</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input id="sound4" type="radio" name="sound" value="bensound-ukulele"class="sound-start custom-control-input">
+                <label class="custom-control-label" for="sound4">Ukelele</label>
+              </div>
+            </div>
+
+            <input type="button" value="Submit" class="btn btn-primary" onclick="nameSubmitted();"/>
+
+        </div>
+        <div class="col-6 form-group">
+            <!-- placeholder for icons -->
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <div id="quizDiv" class="container-fluid background-quiz p-5">
+  <div id="quizDiv" class="container-fluid p-5">
 
       <div class="container card p-5 rounded-corners">
         <div class="card-title">
