@@ -1,0 +1,109 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="quiz.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="task.js"></script>  <!-- TODO call min JS file instead : <script src="task.min.js"></script>-->
+
+</head>
+
+<body class="background-quiz">
+
+  <div id="summary" class="container card p-1 mt-4 rounded-corners">
+    <div class="card-header bg-info text-white">
+      <h1>Java programming task - ticketing system for Malta/Gozo ferry</h1>
+    </div>
+    <div class="card-body">
+      <p>
+        Awrat Ferries Ltd. are setting up a ferry between Malta and Gozo and need a good programmer to implement their backend system with Java. The CEO, Guzeppi Borg has listed the following requirements on how the ferries will operate.
+      </p>
+      <p>
+        Tolls are to be paid in Cirkewwa and a ticket is produced containing the following information:
+      </p>
+      <ul>
+        <li>
+          All passengers names and nationality (Gozitan or non-Gozitan, i.e Maltese/Other)
+        </li>
+        <li>
+          An indicator showing if one of the passengers is a driver
+        </li>
+        <li>
+          Cost per passenger
+        </li>
+        <li>
+          Total cost
+        </li>
+      </ul>
+      <p>
+        On return from Mgarr, tickets have to be validated, invalid tickets can occur when the names or nationalities on passengers identity cards do not match the ones on the ticket.
+      </p>
+      <p>
+        If a ticket is invalid, a flat fine of 20eur needs to be paid.
+      </p>
+      <button class="btn btn-info float-right" type="button" onclick="showTask1()">Go to task 1</button>
+    </div>
+  </div>
+
+  <div id="task1" class="container card p-1 mt-4 rounded-corners">
+    <div class="card-header bg-info text-white">
+      <h1>Task 1</h1>
+    </div>
+    <div class="card-body">
+      <p>
+        Create the POJOs (Plain Old Java Objects) for the entities in use by this ticketing system
+      </p>
+      <ul>
+        <li>Passenger</li>
+        <li>Ticket</li>
+      </ul>
+      <button class="btn btn-info float-right" type="button" onclick="showTask2()">Go to task 2</button>
+    </div>
+  </div>
+  <div class="container card">
+    <h1 id="timer1"></h1>
+  </div>
+
+
+  <div id="task2" class="container card p-1 mt-4 rounded-corners">
+    <div class="card-header bg-info text-white">
+      <h1>Task 2</h1>
+    </div>
+    <div class="card-body">
+      <p>
+        Create a service implementing the actual ticketing system and validation taking into consideration the tolls requirements
+      </p>
+      <ul>
+        <li>TollService</li>
+      </ul>
+      <button class="btn btn-info float-right" type="button" onclick="showTask3()">Go to task 3</button>
+    </div>
+  </div>
+  <div class="container card">
+    <h1 id="timer2"></h1>
+  </div>
+
+  <div id="task3" class="container card p-1 mt-4 rounded-corners">
+    <div class="card-header bg-info text-white">
+      <h1>Task 3</h1>
+    </div>
+    <div class="card-body">
+      <p>
+        Create a main class with the following static methods:
+      </p>
+      <ul>
+        <li>one accepting an array of passengers and producing the total cost of the trip</li>
+        <li>one accepting an array of passengers and a ticket, these are validated and return a boolean value indicating if the ticket is valid or not</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container card">
+    <h1 id="timer3"></h1>
+  </div>
+
+</div>
+
+</body>
+
+</html>
