@@ -1,14 +1,22 @@
 $(function(){
+
+  var summaryContent = $("#summaryContent").html();
+  $("#summary").append(summaryContent);
+  $(".modal-body").append(summaryContent);
+
   $("#task1").hide();
   $("#task2").hide();
   $("#task3").hide();
   $("#timer1").hide();
   $("#timer2").hide();
   $("#timer3").hide();
+
+  $("#submitPage").hide();
+
 });
 
 function showTask1() {
-  $("#summary").hide();
+  $("#summaryPage").hide();
   $("#task1").show();
   $("#timer1").show();
   resetTimer(1);
@@ -60,4 +68,17 @@ function resetTimer(taskNumber) {
     }
   }, 1000);
 
+}
+
+function showHint(task) {
+  var remainingTime = $("#timer" + task).html();
+  submitTask(1, remainingTime);
+}
+
+function submitTask(task, remainingTime) {
+  $("#task" + task).hide();
+  $("#timer"  + task).hide();
+  $("#submitTitle").val("Submit task " + task);
+  $("#submitBody").append("<a href=''>Submit page for task " + task + "</a>");
+  $("#submitPage").show();
 }
