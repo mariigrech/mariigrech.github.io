@@ -102,6 +102,11 @@ function showQuestion(number, title, answer1, answer2, answer3, answer4) {
   $("#imgPlaceholder").attr('src', 'img/question_' + number + '/0.png');
 }
 
+function selectedImage(imageNumber, image) {
+  $("div#iconImages > img").css("opacity", "0.5");
+  $(image).css("opacity", "1.0");
+}
+
 function nameSubmitted(){
   name = $("#nameinput").val();
   $("#nameInputDiv").hide();

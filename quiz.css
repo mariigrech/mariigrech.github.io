@@ -26,6 +26,18 @@ html.cover,body.cover{
  background-size: cover;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
+div#iconImages > img:hover {
+  opacity: 1;
+}
+
+div#iconImages > img {
+  opacity: 0.5;
+}
+
 /* push background div to bottom */
 div.bottom {
   position: fixed;

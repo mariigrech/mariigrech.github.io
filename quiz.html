@@ -43,8 +43,15 @@
             <input type="button" value="Submit" class="btn btn-primary" onclick="nameSubmitted();"/>
 
         </div>
-        <div class="col-6 form-group">
-            <!-- placeholder for icons -->
+        <div id="iconImages" class="col-6 form-group">
+          <label>Images:</label>
+          <br/>
+          <img class="col-3 clickable" border="5" src="img/icons/cultures.png" onclick="selectedImage(1, this);"></img>
+          <img class="col-3 clickable" src="img/icons/superhero.png" onclick="selectedImage(2, this);"></img>
+          <img class="col-3 clickable" src="img/icons/superhero (2).png" onclick="selectedImage(4, this);"></img>
+          <img class="col-3 clickable" src="img/icons/superhero (1).png" onclick="selectedImage(3, this);"></img>
+          <img class="col-3 clickable" src="img/icons/superhero (3).png" onclick="selectedImage(5, this);"></img>
+          <img class="col-3 clickable" src="img/icons/superhero (4).png" onclick="selectedImage(6, this);"></img>
         </div>
 
       </div>
