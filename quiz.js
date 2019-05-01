@@ -41,8 +41,21 @@ $(function(){
               answers[4] = chosenAnswer;
               showQuestion(6, 'Why did you leave your last job?', 'I need a new adventure and try out new things', 'I felt like I wasn not important and appreciated enough and lack of recognition', 'No Opportunity for advancement', 'Wage was not enough for me to cope with my everyday life/needs');
               break;
+            case '6':
+              answers[5] = chosenAnswer;
+              showQuestion(7, 'What would you do if you made a mistake and no one noticed?', 'Try and fix it as best I can but feel guilty for doing it and putting my team mates behind.', 'Reach out to your team mates and try to fix it together', 'Ask your team-leader and explain the issue and ask how it can be fixed.', 'Ask someone from your team who can be more experienced on the subject to fix it for you. ');
+              break;
+            case '7':
+              answers[6] = chosenAnswer;
+              showQuestion(8, ' A new team member joins your team and he is a bit hard to work with. What would you do?', 'Keep a distance from him and try to focus on your own work', 'Try and talk to him about what he is doing and advise him about his actions.', 'Try and work with the other team mates and include him as much as possible', 'Talk to your team-lead or HR about him and try and find a solution on what can be done.');
+              break;
+            case '8':
+              answers[7] = chosenAnswer;
+              showQuestion(9, 'An issue arises at work and your team-lead is off on leave. How would you go about the situation?', 'Call the team-lead and ask for his opinion as he is the one that knows the best about the situation.', 'Take the issue into your own hands and try and fix it on your own.', 'Speak with your team mates about the issue and divide it amongst all of you.', 'Go and ask the head of your department about the issue and decide how to handle it. ');
+              break;
             default:
               sendResults(answers);
+              window.location.href = "task.html"
               break;
           }
           $('#quiz').show();
