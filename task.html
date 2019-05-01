@@ -13,8 +13,15 @@
 
   <div id="summaryContent" style="display: none">
     <p>
-      Awrat Ferries Ltd. are setting up a ferry between Malta and Gozo and need a good programmer to implement their backend system with Java. The CEO, Guzeppi Borg has listed the following requirements on how the ferries will operate.
+      Awrat Ferries Ltd. are setting up a ferry between Malta and Gozo and need a good programmer to implement their backend system with Java. The CEO, Guzeppi Borg has listed the following requirements on how the ferries will operate:
     </p>
+    <p>Tolls</p>
+    <ul>
+      <li>Passengers on foot or being driven by someone else: Gozitan residents: €1.13 / Maltese or Foreign residents: €3.79</li>
+      <li>Gozitan resident + car: €7.43 / Maltese or Foreign resident + car: €10.69</li>
+      <li>So a Gozitan Driver + car and a Maltese Passenger = €11.22</li>
+      <li>Tickets can be bought in bundles, so a group of foot passengers can buy one ticket and pay in one go, same applies for a group travelling with a car</li>
+    </ul>
     <p>
       Tolls are to be paid in Cirkewwa and a ticket is produced containing the following information:
     </p>
@@ -129,10 +136,15 @@
 
   <div id="submitPage" class="container card p-1 mt-4 rounded-corners">
     <div class="card-header bg-info text-white">
-      <h1 id="submitTitle">Submit task x</h1>
+      <h1 id="submitTitle">Hint for task x</h1>
     </div>
-    <div id="submitBody" class="card-body">
-
+    <div  class="card-body">
+      <a target="_blank"><button id="submitButton1" type="button" class="btn btn-info" onclick="submitButtonClicked(1)"></button></a>
+      <a target="_blank"><button id="submitButton2" type="button" class="btn btn-info" onclick="submitButtonClicked(2)"></button></a>
+      <a target="_blank"><button id="submitButton3" type="button" class="btn btn-info" onclick="submitButtonClicked(3)"></button></a>
+      <a target="_blank"><button id="task1Hint" type="button" class="btn btn-info" disabled>Hint</button></a>
+      <a target="_blank"><button id="task2Hint" type="button" class="btn btn-info" disabled>Hint</button></a>
+      <a target="_blank"><button id="task3Hint" type="button" class="btn btn-info" disabled>Hint</button></a>
     </div>
   </div>
 

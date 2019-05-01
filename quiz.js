@@ -55,7 +55,6 @@ $(function(){
               break;
             default:
               sendResults(answers);
-              window.location.href = "task.html"
               break;
           }
           $('#quiz').show();
@@ -100,6 +99,7 @@ function showQuestion(number, title, answer1, answer2, answer3, answer4) {
   $("#quiz > label:nth-child(4)").html(answer3).data('answer', answer3).data('question', '3');
   $("#quiz > label:nth-child(5)").html(answer4).data('answer', answer4).data('question', '4');
   $("#imgPlaceholder").attr('src', 'img/question_' + number + '/0.png');
+  $("label.questionLabel").removeClass("active");
 }
 
 function selectedImage(imageNumber, image) {
@@ -123,7 +123,10 @@ function sendResults(data){
       Subject : "Results",
       Body : data
   }).then(
-    message => alert("Results sent")
+    message => {
+      alert("Results sent");
+      window.location.href = "task.html";
+    }
   );
 
 }

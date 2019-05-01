@@ -46,7 +46,7 @@
         <div id="iconImages" class="col-6 form-group">
           <label>Images:</label>
           <br/>
-          <img class="col-3 clickable" border="5" src="img/icons/cultures.png" onclick="selectedImage(1, this);"></img>
+          <img id="img1" class="col-3 clickable" border="5" src="img/icons/cultures.png" onclick="selectedImage(1, this);"></img>
           <img class="col-3 clickable" src="img/icons/superhero.png" onclick="selectedImage(2, this);"></img>
           <img class="col-3 clickable" src="img/icons/superhero (2).png" onclick="selectedImage(4, this);"></img>
           <img class="col-3 clickable" src="img/icons/superhero (1).png" onclick="selectedImage(3, this);"></img>
@@ -68,10 +68,10 @@
 
           <div class="quiz col-6" id="quiz" data-toggle="buttons">
             <input type="hidden" id="questionNumber" value="1"></input>
-            <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"/>1 One</label>
-            <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"/>2 Two</label>
-            <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3"/>3 Three</label>
-            <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4"/>4 Four</label>
+            <label class="questionLabel element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"/>1 One</label>
+            <label class="questionLabel element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"/>2 Two</label>
+            <label class="questionLabel element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3"/>3 Three</label>
+            <label class="questionLabel element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4"/>4 Four</label>
           </div>
           <div class="col-6 d-flex align-items-center justify-content-center">
             <img id="imgPlaceholder" src="" class="img-fluid"/>

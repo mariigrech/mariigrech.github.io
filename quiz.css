@@ -36,6 +36,7 @@ div#iconImages > img:hover {
 
 div#iconImages > img {
   opacity: 0.5;
+  padding-bottom: 40px;
 }
 
 /* push background div to bottom */
