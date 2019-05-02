@@ -26,6 +26,19 @@ html.cover,body.cover{
  background-size: cover;
 }
 
+.background-finish {
+  /* The image used */
+ background-image: url("img/congratulations.jpg");
+
+ /* Full height */
+ height: 100%;
+
+ /* Center and scale the image nicely */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
 .clickable {
   cursor: pointer;
 }

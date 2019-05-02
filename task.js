@@ -123,3 +123,7 @@ function submitTask(task, remainingTime) {
 function submitButtonClicked(task) {
   $("#task" + task + "Hint").prop('disabled', false);
 }
+
+function submitLastTask() {
+  window.location.href = "finish.html";
+}
