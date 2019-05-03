@@ -11,6 +11,26 @@
 
 <body class="background-quiz">
 
+  <div id="audioModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Prompt</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Would you like music to keep playing?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="playMusic()">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div id="summaryContent" style="display: none">
     <p>
       Awrat Ferries Ltd. are setting up a ferry between Malta and Gozo and need a good programmer to implement their backend system with Java. The CEO, Guzeppi Borg has listed the following requirements on how the ferries will operate:
@@ -48,7 +68,7 @@
   </div>
 
   <div id="summaryModal" class="modal fade" role="dialog">
-    <div id="summaryModalDialog" class="modal-dialog">
+    <div id="summaryModalDialog" class="modal-dialog modal-lg">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -87,7 +107,7 @@
       </ul>
       <img id="boat" src="img/Boat.gif">
       <p></p>
-      
+
       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
       <button type="button" class="btn btn-info" onclick="showHint(1)">Hint</button>
       <button class="btn btn-info float-right" type="button" onclick="showTask2()">Submit Task 1</button>
@@ -108,6 +128,8 @@
       <ul>
         <li>TollService</li>
       </ul>
+      <img id="boat" src="img/Boat.gif">
+      <p></p>
       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
       <button type="button" class="btn btn-info" onclick="showHint(2)">Hint</button>
       <button class="btn btn-info float-right" type="button" onclick="showTask3()">Submit Task 2</button>
@@ -129,7 +151,8 @@
         <li>one accepting an array of passengers and producing the total cost of the trip</li>
         <li>one accepting an array of passengers and a ticket, these are validated and return a boolean value indicating if the ticket is valid or not</li>
       </ul>
-      <img src="Boat.gif">
+      <img id="boat" src="img/Boat.gif">
+      <p></p>
       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
       <button type="button" class="btn btn-info" onclick="showHint(3)">Hint</button>
       <button class="btn btn-info float-right" type="button" onclick="submitLastTask()">Submit Task 3</button>

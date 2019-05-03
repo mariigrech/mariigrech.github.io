@@ -1,8 +1,10 @@
+var name = sessionStorage.getItem("name");
+
 $(function(){
 
   var summaryContent = $("#summaryContent").html();
   $("#summary").append(summaryContent);
-  $(".modal-body").append(summaryContent);
+  $("#summaryModal > div > div > .modal-body").append(summaryContent);
 
   $("#task1").hide();
   $("#task2").hide();
@@ -22,7 +24,23 @@ $(function(){
   $("#task2Hint").hide();
   $("#task3Hint").hide();
 
+  $('#audioModal').modal('show');
+
 });
+
+function playMusic() {
+  var audio = sessionStorage.getItem("audio");
+
+  if(audio != null){
+    var obj = document.createElement("audio");
+    obj.src = "audio/" + audio;
+    obj.volume = 0.1;
+    obj.autoPlay = false;
+    obj.preLoad = true;
+    obj.controls = true;
+    obj.play();
+  }
+}
 
 function showTask1() {
   $("#summaryPage").hide();

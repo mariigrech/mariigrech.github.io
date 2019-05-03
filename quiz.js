@@ -1,4 +1,5 @@
 var name;
+var audio;
 
 $(function(){
     var loading = $('#loadbar').hide();
@@ -20,6 +21,7 @@ $(function(){
     	// $('#loadbar').show();
     	$('#quiz').fadeOut();
     	setTimeout(function(){
+
           switch($("#questionNumber").val()) {
             case '1':
               answers[0] = chosenAnswer;
@@ -78,7 +80,9 @@ var obj = document.createElement("audio");
       obj.pause();
 
       if($(this).val()){
-        obj.src = "audio/" + $(this).val() + ".mp3";
+        audio = $(this).val() + ".mp3";
+        sessionStorage.setItem("audio", audio);
+        obj.src = "audio/" + audio;
         obj.volume = 0.1;
         obj.autoPlay = false;
         obj.preLoad = true;
@@ -109,6 +113,7 @@ function selectedImage(imageNumber, image) {
 
 function nameSubmitted(){
   name = $("#nameinput").val();
+  sessionStorage.setItem("name", name);
   $("#nameInputDiv").hide();
   $("#quizDiv").show();
 }
