@@ -450,3 +450,8 @@ label .glyphicon {
         background-color: #FFF
     }
 }
+
+#boat{
+  height: 60%;
+  margin-left: 250px;
+}
