@@ -14,7 +14,7 @@ $(function(){
   $("#timer2").hide();
   $("#timer3").hide();
 
-  $("#submitPage").hide();
+  $("#hintPage").hide();
 
   $("#submitButton1").hide();
   $("#submitButton2").hide();
@@ -23,6 +23,10 @@ $(function(){
   $("#task1Hint").hide();
   $("#task2Hint").hide();
   $("#task3Hint").hide();
+
+  $("#goToTask2Button").hide();
+  $("#goToTask3Button").hide();
+  $("#finishTasks").hide();
 
   $('#audioModal').modal('show');
 
@@ -44,12 +48,14 @@ function playMusic() {
 
 function showTask1() {
   $("#summaryPage").hide();
+  $("#hintPage").hide();
   $("#task1").show();
   $("#timer1").show();
   resetTimer(1);
 }
 
 function showTask2() {
+  $("#hintPage").hide();
   $("#task1").hide();
   $("#task2").show();
   $("#timer1").hide();
@@ -58,6 +64,7 @@ function showTask2() {
 }
 
 function showTask3() {
+  $("#hintPage").hide();
   $("#task2").hide();
   $("#task3").show();
   $("#timer2").hide();
@@ -99,7 +106,7 @@ function resetTimer(taskNumber) {
 
 function showHint(task) {
   var remainingTime = $("#timer" + task).html();
-  submitTask(1, remainingTime);
+  submitTask(task, remainingTime);
 }
 
 function submitTask(task, remainingTime) {
@@ -107,8 +114,6 @@ function submitTask(task, remainingTime) {
   $("#timer"  + task).hide();
   $("#submitTitle").html("Hint for task " + task);
   $("#submitButton" + task).html("Submit task " + task);
-
-  $("#goToTask2Button").show();
 
   var dropboxSubmitLocation;
   var dropboxHintLocation;
@@ -129,17 +134,31 @@ function submitTask(task, remainingTime) {
   else if (task == '3') {
     dropboxSubmitLocation = "https://www.dropbox.com/sh/uphmkevjslyij7i/AACA0AtyaqXOKBR3hG8jYlo6a?dl=0";
     dropboxHintLocation = "https://www.dropbox.com/sh/mn9f032iw7nuozk/AABZgNlCCPtSxQMyvnqiAviwa?dl=0";
+    $("#submitButton2").hide();
+    $("#submitButton3").show();
     $("#task2Hint").hide();
     $("#task3Hint").show();
   }
 
   $("#submitButton" + task).parent().attr("href", dropboxSubmitLocation);
   $("#task" + task + "Hint").parent().attr("href", dropboxHintLocation);
-  $("#submitPage").show();
+  $("#hintPage").show();
 }
 
 function submitButtonClicked(task) {
   $("#task" + task + "Hint").prop('disabled', false);
+
+  if (task == '1') {
+    $("#goToTask2Button").show();
+  }
+  else if (task == '2') {
+    $("#goToTask2Button").hide();
+    $("#goToTask3Button").show();
+  }
+  else if (task == '3') {
+    $("#goToTask3Button").hide();
+    $("#finishTasks").show();
+  }
 }
 
 function submitLastTask() {

@@ -162,7 +162,7 @@
     <h1 id="timer3"></h1>
   </div>
 
-  <div id="submitPage" class="container card p-1 mt-4 rounded-corners">
+  <div id="hintPage" class="container card p-1 mt-4 rounded-corners">
     <div class="card-header bg-info text-white">
       <h1 id="submitTitle">Hint for task x</h1>
     </div>
@@ -173,6 +173,9 @@
       <a target="_blank"><button id="task1Hint" type="button" class="btn btn-info" disabled>Hint</button></a>
       <a target="_blank"><button id="task2Hint" type="button" class="btn btn-info" disabled>Hint</button></a>
       <a target="_blank"><button id="task3Hint" type="button" class="btn btn-info" disabled>Hint</button></a>
+      <button id="goToTask2Button" class="btn btn-info float-right" type="button" onclick="showTask2()">Go to task 2</button>
+      <button id="goToTask3Button" class="btn btn-info float-right" type="button" onclick="showTask3()">Go to task 3</button>
+      <button id="finishTasks" class="btn btn-info float-right" type="button" onclick="submitLastTask()">Finish all tasks!</button>
     </div>
   </div>
 
