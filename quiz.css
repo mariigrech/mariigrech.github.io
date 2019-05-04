@@ -246,7 +246,7 @@ label .glyphicon {
 }
 
 .modal-body {
-    min-height: 430px;
+    /*min-height: 430px;*/
 }
 #loadbar {
     position: absolute;
@@ -452,6 +452,9 @@ label .glyphicon {
 }
 
 #boat{
-  height: 40%;
-  margin-left: 350px;
+  height: 30%;
+}
+
+#iconPlaceholder img{
+  max-height: 30px;
 }

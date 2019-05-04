@@ -18,6 +18,7 @@ $(function(){
 
     $("label.btn").on('click',function () {
     	var chosenAnswer = $(this).data('answer');
+
     	// $('#loadbar').show();
     	$('#quiz').fadeOut();
     	setTimeout(function(){
@@ -56,6 +57,9 @@ $(function(){
               showQuestion(9, 'An issue arises at work and your team-lead is off on leave. How would you go about the situation?', 'Call the team-lead and ask for his opinion as he is the one that knows the best about the situation.', 'Take the issue into your own hands and try and fix it on your own.', 'Speak with your team mates about the issue and divide it amongst all of you.', 'Go and ask the head of your department about the issue and decide how to handle it. ');
               break;
             default:
+              $('#quizDiv .container').html('please wait while the results are being sent...');
+              answers[8] = $("#namePlaceholder").html();
+              answers[9] = $("#iconPlaceholder img.selected").attr('src');
               sendResults(answers);
               break;
           }
@@ -107,15 +111,21 @@ function showQuestion(number, title, answer1, answer2, answer3, answer4) {
 }
 
 function selectedImage(imageNumber, image) {
-  $("div#iconImages > img").css("opacity", "0.5");
-  $(image).css("opacity", "1.0");
+  $("div#iconImages > img").css("opacity", "0.5").removeClass('selected');
+  $(image).css("opacity", "1.0").addClass('selected');
 }
 
 function nameSubmitted(){
   name = $("#nameinput").val();
+  icon = $("#iconImages img.selected").clone().removeClass('col-3');
   sessionStorage.setItem("name", name);
+  sessionStorage.setItem("icon", icon.attr('src'));
   $("#nameInputDiv").hide();
   $("#quizDiv").show();
+
+  $("#namePlaceholder").html(name);
+  $("#iconPlaceholder").html(icon);
+
 }
 
 function sendResults(data){

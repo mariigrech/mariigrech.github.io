@@ -11,6 +11,13 @@
 
 <body class="background-quiz">
 
+  <div id="userContainer" class="container bg-white p-4 mt-4 rounded d-flex align-items-start">
+      <h3 id="timer2"></h1>
+      <h3 id="timer1"></h1>
+      <h3 id="timer3"></h1>
+    <div id="namePlaceholder" class="ml-auto h5 mr-2 text-secondary"></div>
+    <div id="iconPlaceholder"><img src=""></div>
+  </div>
   <div id="audioModal" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -98,45 +105,53 @@
       <h1>Task 1</h1>
     </div>
     <div class="card-body">
-      <p>
-        Create the POJOs (Plain Old Java Objects) for the entities in use by this ticketing system
-      </p>
-      <ul>
-        <li>Passenger</li>
-        <li>Ticket</li>
-      </ul>
-      <img id="boat" src="img/Boat.gif">
-      <p></p>
-
-      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
-      <button type="button" class="btn btn-info" onclick="showHint(1)">Hint</button>
-      <button class="btn btn-info float-right" type="button" onclick="showTask2()">Submit Task 1</button>
+      <div class="row">
+        <div class="col-8">
+          <p>
+            Create the POJOs (Plain Old Java Objects) for the entities in use by this ticketing system
+          </p>
+          <ul>
+            <li>Passenger</li>
+            <li>Ticket</li>
+            <br>
+            <li>If you get stuck at any point and don't know how to continue, you can get a hint which will give you the complete task you are working on to be able to move on to the other task.
+          </ul>
+        </div>
+        <div class="col-4">
+          <img id="boat" src="img/Boat.gif">
+        </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
+        <button type="button" class="btn btn-info" onclick="showHint(1)">Hint</button>
+        <button class="btn btn-info float-right" type="button" onclick="showTask2()">Submit Task 1</button>
+      </div>
     </div>
   </div>
-  <div class="container card">
-    <h1 id="timer1"></h1>
-  </div>
-
   <div id="task2" class="container card p-1 mt-4 rounded-corners">
     <div class="card-header bg-info text-white">
       <h1>Task 2</h1>
     </div>
     <div class="card-body">
-      <p>
-        Create a service implementing the actual ticketing system and validation taking into consideration the tolls requirements
-      </p>
-      <ul>
-        <li>TollService</li>
-      </ul>
-      <img id="boat" src="img/Boat.gif">
-      <p></p>
-      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
-      <button type="button" class="btn btn-info" onclick="showHint(2)">Hint</button>
-      <button class="btn btn-info float-right" type="button" onclick="showTask3()">Submit Task 2</button>
+      <div class="row">
+        <div class="col-8">
+          <p>
+            Create a service implementing the actual ticketing system and validation taking into consideration the tolls requirements
+          </p>
+          <ul>
+            <li>TollService</li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <img id="boat" src="img/Boat.gif">
+        </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
+        <button type="button" class="btn btn-info" onclick="showHint(2)">Hint</button>
+        <button class="btn btn-info float-right" type="button" onclick="showTask3()">Submit Task 2</button>
+      </div>
     </div>
-  </div>
-  <div class="container card">
-    <h1 id="timer2"></h1>
   </div>
 
   <div id="task3" class="container card p-1 mt-4 rounded-corners">
@@ -144,24 +159,27 @@
       <h1>Task 3</h1>
     </div>
     <div class="card-body">
-      <p>
-        Create a main class with the following static methods:
-      </p>
-      <ul>
-        <li>one accepting an array of passengers and producing the total cost of the trip</li>
-        <li>one accepting an array of passengers and a ticket, these are validated and return a boolean value indicating if the ticket is valid or not</li>
-      </ul>
-      <img id="boat" src="img/Boat.gif">
-      <p></p>
-      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
-      <button type="button" class="btn btn-info" onclick="showHint(3)">Hint</button>
-      <button class="btn btn-info float-right" type="button" onclick="submitLastTask()">Submit Task 3</button>
+      <div class="row">
+          <div class="col-8">
+          <p>
+            Create a main class with the following static methods:
+          </p>
+          <ul>
+            <li>one accepting an array of passengers and producing the total cost of the trip</li>
+            <li>one accepting an array of passengers and a ticket, these are validated and return a boolean value indicating if the ticket is valid or not</li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <img id="boat" src="img/Boat.gif">
+        </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
+        <button type="button" class="btn btn-info" onclick="showHint(3)">Hint</button>
+        <button class="btn btn-info float-right" type="button" onclick="submitLastTask()">Submit Task 3</button>
+      </div>
     </div>
   </div>
-  <div class="container card">
-    <h1 id="timer3"></h1>
-  </div>
-
   <div id="hintPage" class="container card p-1 mt-4 rounded-corners">
     <div class="card-header bg-info text-white">
       <h1 id="submitTitle">Hint for task x</h1>

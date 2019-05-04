@@ -1,6 +1,10 @@
-var name = sessionStorage.getItem("name");
 
 $(function(){
+
+  var name = sessionStorage.getItem("name");
+  var icon = sessionStorage.getItem("icon");
+  $("#namePlaceholder").html(name);
+  $("#iconPlaceholder img").attr("src", icon);
 
   var summaryContent = $("#summaryContent").html();
   $("#summary").append(summaryContent);

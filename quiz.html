@@ -18,8 +18,7 @@
       <div class="row">
         <div class="col-6 form-group">
             <label>Name:</label>
-            <input id="nameinput" type="text" name="fullname" class="form-control"><br>
-
+            <input id="nameinput" type="text" name="fullname" class="form-control" required><br>
 
             <div class="mt-2 mb-5">
               <div class="custom-control custom-radio custom-control-inline">
@@ -61,8 +60,10 @@
   <div id="quizDiv" class="container-fluid p-5">
 
       <div class="container card p-5 rounded-corners">
-        <div class="card-title">
+        <div class="card-title d-flex align-items-start">
           <h3 id="questionTitle">questionTitle</h3>
+          <div id="namePlaceholder" class="ml-auto h5 mr-2 text-secondary"></div>
+          <div id="iconPlaceholder"></div>
         </div>
         <div class="card-body row">
 
