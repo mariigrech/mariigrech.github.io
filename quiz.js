@@ -60,7 +60,7 @@ $(function(){
               $('#quizDiv .container').html('please wait while the results are being sent...');
               answers[8] = $("#namePlaceholder").html();
               answers[9] = $("#iconPlaceholder img.selected").attr('src');
-              sendQuizResults(answers);
+              sendQuizResults(name, answers);
               break;
           }
           $('#quiz').show();
