@@ -60,7 +60,7 @@ $(function(){
               $('#quizDiv .container').html('please wait while the results are being sent...');
               answers[8] = $("#namePlaceholder").html();
               answers[9] = $("#iconPlaceholder img.selected").attr('src');
-              sendResults(answers);
+              sendQuizResults(answers);
               break;
           }
           $('#quiz').show();
@@ -125,23 +125,5 @@ function nameSubmitted(){
 
   $("#namePlaceholder").html(name);
   $("#iconPlaceholder").html(icon);
-
-}
-
-function sendResults(data){
-    Email.send({
-      Host : "smtp.mailtrap.io",
-      Username : "b508ab347d19d1",
-      Password : "87e5d764bacd44",
-      To : "dummy@email.com",
-      From : "dummy@email.com",
-      Subject : "Results",
-      Body : data
-  }).then(
-    message => {
-      alert("Results sent");
-      window.location.href = "task.html";
-    }
-  );
 
 }
