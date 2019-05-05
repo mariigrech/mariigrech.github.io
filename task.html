@@ -16,31 +16,35 @@
 <body class="background-quiz">
 
   <div id="userContainer" class="container bg-white p-4 mt-4 rounded d-flex align-items-start">
-      <h3 id="timer2"></h1>
-      <h3 id="timer1"></h1>
-      <h3 id="timer3"></h1>
+    <h3 id="timer1">
+    </h3>
+    <h3 id="timer2">
+    </h3>
+    <h3 id="timer3">
+    </h3>
     <div id="namePlaceholder" class="ml-auto h5 mr-2 text-secondary"></div>
     <div id="iconPlaceholder"><img src=""></div>
   </div>
+
   <div id="audioModal" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Prompt</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Would you like music to keep playing?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="playMusic()">Yes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Prompt</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Would you like music to keep playing?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="playMusic()">Yes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <div id="summaryContent" style="display: none">
     <p>
@@ -104,6 +108,27 @@
     </div>
   </div>
 
+  <div id="submitModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Task submission</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Submit your task in the following folder: <a id="submitDropboxLink" target="_blank"></a></p>
+          <p>After files have been submitted click on the 'Task submitted' button to proceed</p>
+        </div>
+        <div class="modal-footer">
+          <button id="taskSubmittedButton" type="button" class="btn btn-primary" data-dismiss="modal">Task submitted</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="task1" class="container card p-1 mt-4 rounded-corners">
     <div class="card-header bg-info text-white">
       <h1>Task 1</h1>
@@ -128,7 +153,7 @@
       <div>
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
         <button type="button" class="btn btn-info" onclick="showHint(1)">Hint</button>
-        <button class="btn btn-info float-right" type="button" onclick="showTask2()">Submit Task 1</button>
+        <button class="btn btn-info float-right" type="button" onclick="showSubmissionModal(1)">Submit Task 1</button>
       </div>
     </div>
   </div>
@@ -153,7 +178,7 @@
       <div>
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
         <button type="button" class="btn btn-info" onclick="showHint(2)">Hint</button>
-        <button class="btn btn-info float-right" type="button" onclick="showTask3()">Submit Task 2</button>
+        <button class="btn btn-info float-right" type="button" onclick="showSubmissionModal(2)">Submit Task 2</button>
       </div>
     </div>
   </div>
@@ -164,7 +189,7 @@
     </div>
     <div class="card-body">
       <div class="row">
-          <div class="col-8">
+        <div class="col-8">
           <p>
             Create a main class with the following static methods:
           </p>
@@ -180,7 +205,7 @@
       <div>
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#summaryModal">Show summary</button>
         <button type="button" class="btn btn-info" onclick="showHint(3)">Hint</button>
-        <button class="btn btn-info float-right" type="button" onclick="submitLastTask()">Submit Task 3</button>
+        <button class="btn btn-info float-right" type="button" onclick="showSubmissionModal(3)">Submit Task 3</button>
       </div>
     </div>
   </div>
@@ -188,7 +213,7 @@
     <div class="card-header bg-info text-white">
       <h1 id="submitTitle">Hint for task x</h1>
     </div>
-    <div  class="card-body">
+    <div class="card-body">
       <a target="_blank"><button id="submitButton1" type="button" class="btn btn-info" onclick="submitButtonClicked(1)"></button></a>
       <a target="_blank"><button id="submitButton2" type="button" class="btn btn-info" onclick="submitButtonClicked(2)"></button></a>
       <a target="_blank"><button id="submitButton3" type="button" class="btn btn-info" onclick="submitButtonClicked(3)"></button></a>

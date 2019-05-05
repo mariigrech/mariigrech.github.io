@@ -50,6 +50,34 @@ function playMusic() {
   }
 }
 
+function showSubmissionModal(task) {
+  var dropboxSubmitLocation;
+
+  if (task == 1) {
+    dropboxSubmitLocation = "https://www.dropbox.com/sh/l4r3eiab8rq0eco/AABuWPXpRRoTcezSzlFTVWJPa?dl=0";
+    $("#taskSubmittedButton").click(()=>{
+      showTask2();
+    });
+  }
+  else if (task == 2) {
+    dropboxSubmitLocation = "https://www.dropbox.com/sh/chs4v8atu4013b1/AADzsRtIOGSgkzr7FSmGGjeta?dl=0";
+    $("#taskSubmittedButton").click(()=>{
+      showTask3();
+    });
+  }
+  else if (task == 3) {
+    dropboxSubmitLocation = "https://www.dropbox.com/sh/uphmkevjslyij7i/AACA0AtyaqXOKBR3hG8jYlo6a?dl=0";
+    $("#taskSubmittedButton").click(()=>{
+      submitLastTask();
+    });
+  }
+
+  $("#submitDropboxLink").text(dropboxSubmitLocation);
+  $("#submitDropboxLink").attr("href", dropboxSubmitLocation);
+
+  $("#submitModal").modal("show");
+}
+
 function showTask1() {
   $("#summaryPage").hide();
   $("#hintPage").hide();
