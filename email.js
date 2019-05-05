@@ -24,7 +24,7 @@ function sendTaskSubmissionTime(name, task, remainingTime){
       To : "dummy@email.com",
       From : "dummy@email.com",
       Subject : name + " - task " + task,
-      Body : "RemainingTime=" + remainingTime + " - submitted timestamp="
+      Body : remainingTime + " - submitted timestamp=" + new Date().toUTCString()
   }).then(
     message => {
       // do nothing

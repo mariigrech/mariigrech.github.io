@@ -87,6 +87,7 @@ function showTask1() {
 }
 
 function showTask2() {
+  sendTaskSubmissionTime(name, 1, $("#timer1").text());
   $("#hintPage").hide();
   $("#task1").hide();
   $("#task2").show();
@@ -96,6 +97,7 @@ function showTask2() {
 }
 
 function showTask3() {
+  sendTaskSubmissionTime(name, 2, $("#timer2").text());
   $("#hintPage").hide();
   $("#task2").hide();
   $("#task3").show();
@@ -178,6 +180,8 @@ function submitTask(task, remainingTime) {
 }
 
 function submitButtonClicked(task) {
+  sendTaskSubmissionTime(name, task, $("#timer" + task).text());
+
   $("#task" + task + "Hint").prop('disabled', false);
 
   if (task == '1') {
@@ -188,11 +192,13 @@ function submitButtonClicked(task) {
     $("#goToTask3Button").show();
   }
   else if (task == '3') {
-    $("#goToTask3Button").hide();
+    $("#goToTask3Button").hide()
+    ;
     $("#finishTasks").show();
   }
 }
 
 function submitLastTask() {
+  sendTaskSubmissionTime(name, 3, $("#timer3").text());
   window.location.href = "finish.html";
 }
