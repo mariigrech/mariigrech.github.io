@@ -117,7 +117,15 @@ function selectedImage(imageNumber, image) {
 
 function nameSubmitted(){
   name = $("#nameinput").val();
-  icon = $("#iconImages img.selected").clone().removeClass('col-3');
+  icon = $("#iconImages img.selected").clone();
+
+  if(name == "" || !icon.length){
+    alert('Please enter a name and select an image');
+    return false;
+  }
+
+  icon.removeClass('col-3')
+
   sessionStorage.setItem("name", name);
   sessionStorage.setItem("icon", icon.attr('src'));
   $("#nameInputDiv").hide();

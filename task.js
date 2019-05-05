@@ -1,4 +1,7 @@
 
+var timer;
+var obj = document.createElement("audio");
+
 $(function(){
 
   var name = sessionStorage.getItem("name");
@@ -40,7 +43,6 @@ function playMusic() {
   var audio = sessionStorage.getItem("audio");
 
   if(audio != null){
-    var obj = document.createElement("audio");
     obj.src = "audio/" + audio;
     obj.volume = 0.1;
     obj.autoPlay = false;
@@ -93,6 +95,7 @@ function showTask2() {
   $("#task2").show();
   $("#timer1").hide();
   $("#timer2").show();
+  clearInterval(timer);
   resetTimer(2);
 }
 
@@ -103,6 +106,7 @@ function showTask3() {
   $("#task3").show();
   $("#timer2").hide();
   $("#timer3").show();
+  clearInterval(timer);
   resetTimer(3);
 }
 
@@ -114,7 +118,7 @@ function resetTimer(taskNumber) {
   countDownDate.setTime(countDownDate.getTime() + (minutesToCountDown * 60 * 1000));
 
   // Update the count down every 1 second
-  var x = setInterval(function() {
+  timer = setInterval(function() {
 
     // Get todays date and time
     var now = new Date().getTime();
@@ -131,11 +135,21 @@ function resetTimer(taskNumber) {
 
     // If the count down is finished, write some text
     if (distance < 0) {
-      clearInterval(x);
+      clearInterval(timer);
+
+      obj.pause();
+      obj.src = "audio/timeup.mp3";
+      obj.volume = 0.1;
+      obj.autoPlay = false;
+      obj.preLoad = true;
+      obj.controls = true;
+      obj.play();
+
+      setTimeout(function(){obj.pause();},10000);
+
       document.getElementById("timer" + taskNumber).innerHTML = "Remaining time for this task: EXPIRED";
     }
   }, 1000);
-
 }
 
 function showHint(task) {

@@ -452,7 +452,9 @@ label .glyphicon {
 }
 
 #boat{
-  height: 30%;
+  height: auto;
+    width: auto;
+    max-width: 100%;
 }
 
 #iconPlaceholder img{
