@@ -63,12 +63,14 @@ function showSubmissionModal(task) {
   }
   else if (task == 2) {
     dropboxSubmitLocation = "https://www.dropbox.com/sh/chs4v8atu4013b1/AADzsRtIOGSgkzr7FSmGGjeta?dl=0";
+    $("#taskSubmittedButton").unbind("click");
     $("#taskSubmittedButton").click(()=>{
       showTask3();
     });
   }
   else if (task == 3) {
     dropboxSubmitLocation = "https://www.dropbox.com/sh/uphmkevjslyij7i/AACA0AtyaqXOKBR3hG8jYlo6a?dl=0";
+    $("#taskSubmittedButton").unbind("click");
     $("#taskSubmittedButton").click(()=>{
       submitLastTask();
     });
