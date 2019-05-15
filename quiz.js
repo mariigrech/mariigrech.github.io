@@ -57,9 +57,10 @@ $(function(){
               showQuestion(9, 'An issue arises at work and your team-lead is off on leave. How would you go about the situation?', 'Call the team-lead and ask for his opinion as he is the one that knows the best about the situation.', 'Take the issue into your own hands and try and fix it on your own.', 'Speak with your team mates about the issue and divide it amongst all of you.', 'Go and ask the head of your department about the issue and decide how to handle it. ');
               break;
             default:
-              $('#quizDiv .container').html('please wait while the results are being sent...');
               answers[8] = chosenAnswer;
+                  console.log(chosenAnswer);
               sendQuizResults(name, answers);
+              $('#quizDiv .container').html('please wait while the results are being sent...');
               break;
           }
           $('#quiz').show();
