@@ -58,8 +58,7 @@ $(function(){
               break;
             default:
               $('#quizDiv .container').html('please wait while the results are being sent...');
-              answers[8] = $("#namePlaceholder").html();
-              answers[9] = $("#iconPlaceholder img.selected").attr('src');
+              answers[8] = chosenAnswer;
               sendQuizResults(name, answers);
               break;
           }
